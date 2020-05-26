@@ -2,10 +2,11 @@ import React from "react";
 import Link from "next/link";
 
 const Card = ({ post }) => {
-  const imageUrl =
-    process.env.NODE_ENV !== "development"
-      ? post.image.url
-      : process.env.API_URL + post.image.url;
+  const imageUrl = process.env.API_URL + post.image.url;
+  // const imageUrl =
+  //   process.env.NODE_ENV !== "development"
+  //     ? post.image.url
+  //     : process.env.API_URL + post.image.url;
   return (
     <Link href={{ pathname: "article", query: { id: post.id } }}>
       <a className="uk-link-reset">
